@@ -72,6 +72,13 @@ public class ThemePark {
 
     public void areaOne(ActionEvent event) {
         frame = new JFrame("Area 1");
+        label = new JLabel("Which attraction do you want to see?");
+        button = new JButton("Attraction One");
+        button.addActionListener(m -> this.attractionOneM(m));
+        button = new JButton("Attraction 2");
+        button.addActionListener(m -> this.attractionTwoM(m));
+        button = new JButton("Attraction 3");
+        button.addActionListener(m -> this.attractionThreeM(m));
     }
 
     public void areaTwo(ActionEvent event) {
