@@ -24,9 +24,18 @@ public class ThemePark {
     private JLabel label;
     private JProgressBar progressBar;
 
+
     private int buttonPresses = 0;
+    private int score = 0;
+    int lowDamage = 0;
+       int okDamage = 0;
+       int points = 0;
+       int c = 0;
+    
 
     public static void main(String[] args) {
+       // boolean randomEncounter = true;
+       
         new ThemePark();
     }
 
@@ -62,6 +71,11 @@ public class ThemePark {
     }
 
     public void startGame(ActionEvent event) {
+        int c = 200;
+        int lowDamage = 100;
+        int okDamage = 500;
+
+
         frame = new JFrame("The Game");
         label = new JLabel("Which area do you want to start in?");
         button = new JButton("Area 1");
@@ -130,13 +144,59 @@ public class ThemePark {
         button = new JButton("1- Run away");
         button = new JButton("2- Engage in an anime battle");
         button = new JButton("3- Make peace"); 
+
     }
+
+    }
+    public void optionOne(ActionEvent event){
+        boolean randomEncounter = false;
+        points = points + 100;
+
+    }
+
+    public void optionTwo(ActionEvent event){
+        int m = 300;
+        m = (int) (Math.random() * 100 + 150);
+        frame = new JFrame("Waiting...");
+        label = new JLabel("You did" + m);
+        if (m > 0){
+            boolean randomEncounter = true;
+        }
+        else if (1 > m){
+            boolean randomEncounter = false;
+        }
+
+    }
+
+    public void optionThree(ActionEvent event){
+        frame = new JFrame("Waiting...");
+        label = new JLabel("Tap the button to try to make peace");
+        progressBar = new JProgressBar(0, 100);
+        progressBar.setStringPainted(true);
+        button = new JButton("Click me");
+        button.addActionListener(u -> this.makePeace(u));
+        frame.add(progressBar);
+        frame.add(button);
+        frame.setVisible(true);
+        if (score == 100){
+            try (Scanner in = new Scanner("randomEncounter.txt")) {
+                String output = in.next();
+                label = new JLabel("You made peace with" + output);
+                points = points + 150;
+            }
+            boolean randomEncounter = false;
+        }
+    }
+
+    private void makePeace(ActionEvent event) {
+        this.score++;
+        this.progressBar.setValue(this.score);
+
 
     }
 
     public void attractionTwoM(ActionEvent event) {
-        frame = new JFrame("Attraction Two");
-
+        
     }
 
     public void attractionThreeM(ActionEvent event) {
