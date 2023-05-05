@@ -196,7 +196,24 @@ public class ThemePark {
     }
 
     public void attractionTwoM(ActionEvent event) {
-        
+        frame = new JFrame("Attraction Two");
+        try (Scanner in = new Scanner("randomEncounterElectricBoogaloo.txt")) {
+            String output = in.next();
+            label = new JLabel("You come across" + output);
+            points = points + 150;
+        }
+        label = new JLabel("Tap the button to try to have more people join your party");
+        progressBar = new JProgressBar(0, 150);
+        progressBar.setStringPainted(true);
+        button = new JButton("Click me");
+        button.addActionListener(u -> this.makePeace(u));
+        frame.add(progressBar);
+        frame.add(button);
+        frame.setVisible(true);
+        if (score == 150){
+            label = new JLabel("Your party is now stronger");
+            
+        }
     }
 
     public void attractionThreeM(ActionEvent event) {
