@@ -46,29 +46,44 @@ public class ThemePark {
 
         button = new JButton("Press here to select your character");
         button.addActionListener(event -> this.characterMenu(event));
+        frame.add(button);
+        frame.setVisible(true);
 
     }
 
     public void characterMenu(ActionEvent event) {
-        label = new JLabel("You Choose The Area");
+        frame = new JFrame("You Choose The Area");
+        frame.setLayout(new FlowLayout());
+        frame.setSize(500, 500);
         label = new JLabel("Park Employee");
-        button = new JButton("Inspect Character");
-        button.addActionListener(e -> this.characterInfo(e));
-        button = new JButton("Play as Character");
-        button.addActionListener(e -> this.startGame(e));
+        JButton inspectButton = new JButton("Inspect Character");
+        inspectButton.addActionListener(e -> this.characterInfo(e));
+        JButton playButton = new JButton("Play as Character");
+        playButton.addActionListener(e -> this.startGame(e));
+        frame.add(playButton);
+        frame.add(inspectButton);
+        frame.add(label);
+        frame.setVisible(true);
 
     }
 
     public void characterInfo(ActionEvent event) {
         frame = new JFrame("Park Employee");
+        frame.setLayout(new FlowLayout());
         frame.setSize(500, 500);
-        label = new JLabel("Character Bio");
-        label = new JLabel("Character Stats");
-        button = new JButton("Go Back to Menu");
-        button.addActionListener(b -> this.characterMenu(b));
-        button = new JButton("Play as Character");
-        button.addActionListener(b -> this.startGame(b));
+        JLabel characterLabel = new JLabel("Character Bio");
+        JLabel statsLabel = new JLabel("Character Stats");
+        JButton menuButton = new JButton("Go Back to Menu");
+        menuButton.addActionListener(b -> this.characterMenu(b));
+        JButton playButton = new JButton("Play as Character");
+        playButton.addActionListener(b -> this.startGame(b));
+        frame.add(characterLabel);
+        frame.add(statsLabel);
+        frame.add(menuButton);
+        frame.add(playButton);
+        frame.setVisible(true);
     }
+        
 
     public void startGame(ActionEvent event) {
         int c = 200;
@@ -77,75 +92,130 @@ public class ThemePark {
 
 
         frame = new JFrame("The Game");
-        label = new JLabel("Which area do you want to start in?");
-        button = new JButton("Area 1");
-        button.addActionListener(a -> this.areaOne(a));
-        button = new JButton("Area 2");
-        button.addActionListener(a -> this.areaTwo(a));
-        button = new JButton("Area 3");
-        button.addActionListener(a -> this.areaThree(a));
-        button = new JButton("Area 4");
-        button.addActionListener(a -> this.areaFour(a));
+        frame.setLayout(new FlowLayout());
+        frame.setSize(500, 500);
+        frame.setVisible(true);
+        JLabel areaLabel = new JLabel("Which area do you want to start in?");
+        JButton areaOneButton = new JButton("Area 1");
+        areaOneButton.addActionListener(a -> this.areaOne(a));
+        JButton areaTwoButton = new JButton("Area 2");
+        areaTwoButton.addActionListener(a -> this.areaTwo(a));
+        JButton areaThreeButton = new JButton("Area 3");
+        areaThreeButton.addActionListener(a -> this.areaThree(a));
+        JButton areaFourButton = new JButton("Area 4");
+        areaFourButton.addActionListener(a -> this.areaFour(a));
+        frame.add(areaLabel);
+        frame.add(areaOneButton);
+        frame.add(areaTwoButton);
+        frame.add(areaThreeButton);
+        frame.add(areaFourButton);
+        frame.setVisible(true);
     }
 
     public void areaOne(ActionEvent event) {
         frame = new JFrame("Area 1");
-        label = new JLabel("Which attraction do you want to see?");
-        button = new JButton("Attraction 1");
-        button.addActionListener(m -> this.attractionOneM(m));
-        button = new JButton("Attraction 2");
-        button.addActionListener(m -> this.attractionTwoM(m));
-        button = new JButton("Attraction 3");
-        button.addActionListener(m -> this.attractionThreeM(m));
+        frame.setLayout(new FlowLayout());
+        frame.setSize(500, 500);
+        frame.setVisible(true);
+        JLabel attractionLabel = new JLabel("Which attraction do you want to see?");
+        JButton attractionOneButton = new JButton("Attraction 1");
+        attractionOneButton.addActionListener(m -> this.attractionOneM(m));
+        JButton attractionTwoButton = new JButton("Attraction 2");
+        attractionTwoButton.addActionListener(m -> this.attractionTwoM(m));
+        JButton attractionThreeButton = new JButton("Attraction 3");
+        attractionThreeButton.addActionListener(m -> this.attractionThreeM(m));
+        frame.add(attractionLabel);
+        frame.add(attractionOneButton);
+        frame.add(attractionTwoButton);
+        frame.add(attractionThreeButton);
+        frame.setVisible(true);
     }
 
     public void areaTwo(ActionEvent event) {
         frame = new JFrame("Area 2");
-        label = new JLabel("Which attraction do you want to see?");
-        button = new JButton("Attraction 1");
-        button.addActionListener(h -> this.attractionOneH(h));
-        button = new JButton("Attraction 2");
-        button.addActionListener(h -> this.attractionTwoH(h));
-        button = new JButton("Attraction 3");
-        button.addActionListener(h -> this.attractionThreeH(h));
+        frame.setLayout(new FlowLayout());
+        frame.setSize(500, 500);
+        frame.setVisible(true);
+        JLabel attractionLabel = new JLabel("Which attraction do you want to see?");
+        JButton attractionOneButton = new JButton("Attraction 1");
+        attractionOneButton.addActionListener(h -> this.attractionOneH(h));
+        JButton attractionTwoButton = new JButton("Attraction 2");
+        attractionTwoButton.addActionListener(h -> this.attractionTwoH(h));
+        JButton attractionThreeButton = new JButton("Attraction 3");
+        attractionThreeButton.addActionListener(h -> this.attractionThreeH(h));
+        frame.add(attractionLabel);
+        frame.add(attractionOneButton);
+        frame.add(attractionTwoButton);
+        frame.add(attractionThreeButton);
+        frame.setVisible(true);
     }
 
     public void areaThree(ActionEvent event) {
         frame = new JFrame("Area 3");
-        label = new JLabel("Which attraction do you want to see?");
-        button = new JButton("Attraction 1");
-        button.addActionListener(e -> this.attractionOneE(e));
-        button = new JButton("Attraction 2");
-        button.addActionListener(e -> this.attractionTwoE(e));
-        button = new JButton("Attraction 3");
-        button.addActionListener(e -> this.attractionThreeE(e));
+        frame.setLayout(new FlowLayout());
+        frame.setSize(500, 500);
+        frame.setVisible(true);
+        JLabel attractionLabel = new JLabel("Which attraction do you want to see?");
+        JButton attractionOneButton = new JButton("Attraction 1");
+        attractionOneButton.addActionListener(e -> this.attractionOneE(e));
+        JButton attractionTwoButton = new JButton("Attraction 2");
+        attractionOneButton.addActionListener(e -> this.attractionTwoE(e));
+        JButton attractionThreeButton = new JButton("Attraction 3");
+        attractionThreeButton.addActionListener(e -> this.attractionThreeE(e));
+        frame.add(attractionLabel);
+        frame.add(attractionOneButton);
+        frame.add(attractionTwoButton);
+        frame.add(attractionThreeButton);
+        frame.setVisible(true);
     }
 
     public void areaFour(ActionEvent event) {
         frame = new JFrame("Area 4");
-        label = new JLabel("Which attraction do you want to see?");
-        button = new JButton("Attraction 1");
-        button.addActionListener(a -> this.attractionOneA(a));
-        button = new JButton("Attraction 2");
-        button.addActionListener(a -> this.attractionTwoA(a));
-        button = new JButton("Attraction 3");
-        button.addActionListener(a -> this.attractionThreeA(a));
+        frame.setLayout(new FlowLayout());
+        frame.setSize(500, 500);
+        frame.setVisible(true);
+        JLabel attractionLabel = new JLabel("Which attraction do you want to see?");
+        JButton attractionOneButton = new JButton("Attraction 1");
+        attractionOneButton.addActionListener(a -> this.attractionOneA(a));
+        JButton attractionTwoButton = new JButton("Attraction 2");
+        attractionTwoButton.addActionListener(a -> this.attractionTwoA(a));
+        JButton attractionThreeButton = new JButton("Attraction 3");
+        attractionThreeButton.addActionListener(a -> this.attractionThreeA(a));
+        frame.add(attractionLabel);
+        frame.add(attractionOneButton);
+        frame.add(attractionTwoButton);
+        frame.add(attractionThreeButton);
+        frame.setVisible(true);
     }
 
     public void attractionOneM(ActionEvent event) {
         frame = new JFrame("Attraction One");
+        frame.setLayout(new FlowLayout());
+        frame.setSize(500, 500);
+        frame.setVisible(true);
         boolean randomEncounter = true;
         while (randomEncounter == true){
             try (Scanner in = new Scanner("randomEncounter.txt")) {
                 String output = in.next();
                 label = new JLabel(output);
         }
-        label = new JLabel("What do you do?");
-        button = new JButton("1- Run away");
-        button = new JButton("2- Engage in an anime battle");
-        button = new JButton("3- Make peace"); 
+        JLabel choiceLabel = new JLabel("What do you do?");
+        JButton runButton = new JButton("1- Run away");
+        runButton.addActionListener(g -> optionOne(g));
+        JButton animeButton = new JButton("2- Engage in an anime battle");
+        animeButton.addActionListener(g -> optionTwo(g));
+        JButton peaceButton = new JButton("3- Make peace");
+        peaceButton.addActionListener(g -> optionThree(g));
+        frame.add(choiceLabel);
+        frame.add(runButton);
+        frame.add(animeButton);
+        frame.add(peaceButton);
+        
 
     }
+    //frame.add(button);
+       // frame.add(label);
+       frame.setVisible(true);
 
     }
     public void optionOne(ActionEvent event){
@@ -170,22 +240,26 @@ public class ThemePark {
 
     public void optionThree(ActionEvent event){
         frame = new JFrame("Waiting...");
-        label = new JLabel("Tap the button to try to make peace");
-        progressBar = new JProgressBar(0, 100);
-        progressBar.setStringPainted(true);
-        button = new JButton("Click me");
-        button.addActionListener(u -> this.makePeace(u));
-        frame.add(progressBar);
-        frame.add(button);
+        frame.setLayout(new FlowLayout());
+        frame.setSize(500, 500);
         frame.setVisible(true);
+        JLabel peaceLabel = new JLabel("Tap the button to try to make peace");
+        JProgressBar peaceProgressBar = new JProgressBar(0, 100);
+        peaceProgressBar.setStringPainted(true);
+        JButton peaceButton = new JButton("Click me");
+        peaceButton.addActionListener(u -> this.makePeace(u));
         if (score == 100){
             try (Scanner in = new Scanner("randomEncounter.txt")) {
                 String output = in.next();
                 label = new JLabel("You made peace with" + output);
+                frame.add(label);
                 points = points + 150;
             }
             boolean randomEncounter = false;
         }
+        frame.add(peaceLabel);
+        frame.add(peaceProgressBar);
+        frame.setVisible(true);
     }
 
     private void makePeace(ActionEvent event) {
@@ -197,23 +271,29 @@ public class ThemePark {
 
     public void attractionTwoM(ActionEvent event) {
         frame = new JFrame("Attraction Two");
+        frame.setLayout(new FlowLayout());
+        frame.setVisible(true);
         try (Scanner in = new Scanner("randomEncounterElectricBoogaloo.txt")) {
             String output = in.next();
             label = new JLabel("You come across" + output);
+            frame.add(label);
             points = points + 150;
         }
-        label = new JLabel("Tap the button to try to have more people join your party");
-        progressBar = new JProgressBar(0, 150);
-        progressBar.setStringPainted(true);
-        button = new JButton("Click me");
-        button.addActionListener(u -> this.makePeace(u));
-        frame.add(progressBar);
-        frame.add(button);
-        frame.setVisible(true);
+        JLabel partyLabel = new JLabel("Tap the button to try to have more people join your party");
+        JProgressBar partyProgressBar = new JProgressBar(0, 150);
+        partyProgressBar.setStringPainted(true);
+        JButton partyButton = new JButton("Click me");
+        partyButton.addActionListener(u -> this.makePeace(u));
+        
         if (score == 150){
             label = new JLabel("Your party is now stronger");
             
         }
+        frame.add(partyLabel);
+        frame.add(partyProgressBar);
+        frame.add(partyButton);
+        frame.setVisible(true);
+      //  frame.add(label);
     }
 
     public void attractionThreeM(ActionEvent event) {
