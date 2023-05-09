@@ -43,7 +43,7 @@ public class ThemePark {
 
         frame = new JFrame("Theme Park Game");
         frame.setSize(500, 500);
-
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         button = new JButton("Press here to select your character");
         button.addActionListener(event -> this.characterMenu(event));
         frame.add(button);
@@ -53,6 +53,7 @@ public class ThemePark {
 
     public void characterMenu(ActionEvent event) {
         frame = new JFrame("You Choose The Area");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
         frame.setSize(500, 500);
         label = new JLabel("Park Employee");
@@ -69,6 +70,7 @@ public class ThemePark {
 
     public void characterInfo(ActionEvent event) {
         frame = new JFrame("Park Employee");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
         frame.setSize(500, 500);
         JLabel characterLabel = new JLabel("Character Bio");
@@ -92,6 +94,7 @@ public class ThemePark {
 
 
         frame = new JFrame("The Game");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
         frame.setSize(500, 500);
         frame.setVisible(true);
@@ -114,6 +117,7 @@ public class ThemePark {
 
     public void areaOne(ActionEvent event) {
         frame = new JFrame("Area 1");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
         frame.setSize(500, 500);
         frame.setVisible(true);
@@ -133,6 +137,7 @@ public class ThemePark {
 
     public void areaTwo(ActionEvent event) {
         frame = new JFrame("Area 2");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
         frame.setSize(500, 500);
         frame.setVisible(true);
@@ -152,6 +157,7 @@ public class ThemePark {
 
     public void areaThree(ActionEvent event) {
         frame = new JFrame("Area 3");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
         frame.setSize(500, 500);
         frame.setVisible(true);
@@ -171,6 +177,7 @@ public class ThemePark {
 
     public void areaFour(ActionEvent event) {
         frame = new JFrame("Area 4");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
         frame.setSize(500, 500);
         frame.setVisible(true);
@@ -190,6 +197,7 @@ public class ThemePark {
 
     public void attractionOneM(ActionEvent event) {
         frame = new JFrame("Attraction One");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
         frame.setSize(500, 500);
         frame.setVisible(true);
@@ -198,6 +206,7 @@ public class ThemePark {
             try (Scanner in = new Scanner("randomEncounter.txt")) {
                 String output = in.next();
                 label = new JLabel(output);
+                frame.add(label);
         }
         JLabel choiceLabel = new JLabel("What do you do?");
         JButton runButton = new JButton("1- Run away");
@@ -240,6 +249,7 @@ public class ThemePark {
 
     public void optionThree(ActionEvent event){
         frame = new JFrame("Waiting...");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
         frame.setSize(500, 500);
         frame.setVisible(true);
@@ -271,6 +281,7 @@ public class ThemePark {
 
     public void attractionTwoM(ActionEvent event) {
         frame = new JFrame("Attraction Two");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
         frame.setVisible(true);
         try (Scanner in = new Scanner("randomEncounterElectricBoogaloo.txt")) {
