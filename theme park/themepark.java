@@ -140,7 +140,6 @@ public class ThemePark {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
         frame.setSize(500, 500);
-        frame.setVisible(true);
         JLabel attractionLabel = new JLabel("Which attraction do you want to see?");
         JButton attractionOneButton = new JButton("Attraction 1");
         attractionOneButton.addActionListener(h -> this.attractionOneH(h));
@@ -196,13 +195,13 @@ public class ThemePark {
     }
 
     public void attractionOneM(ActionEvent event) {
+        boolean randomEncounter = true;
+        //while (randomEncounter == true){
         frame = new JFrame("Attraction One");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
         frame.setSize(500, 500);
-        frame.setVisible(true);
-        boolean randomEncounter = true;
-        while (randomEncounter == true){
+        
             try (Scanner in = new Scanner("randomEncounter.txt")) {
                 String output = in.next();
                 label = new JLabel(output);
@@ -219,9 +218,11 @@ public class ThemePark {
         frame.add(runButton);
         frame.add(animeButton);
         frame.add(peaceButton);
+        frame.setVisible(true);
+        
         
 
-    }
+    //}
     //frame.add(button);
        // frame.add(label);
        frame.setVisible(true);
@@ -234,12 +235,13 @@ public class ThemePark {
     }
 
     public void optionTwo(ActionEvent event){
+        frame = new JFrame("Waiting...");
         int m = 300;
         m = (int) (Math.random() * 100 + 150);
-        frame = new JFrame("Waiting...");
         label = new JLabel("You did" + m);
+        frame.add(label);
         if (m > 0){
-            boolean randomEncounter = true;
+            attractionOneM(event);
         }
         else if (1 > m){
             boolean randomEncounter = false;
@@ -268,6 +270,7 @@ public class ThemePark {
             boolean randomEncounter = false;
         }
         frame.add(peaceLabel);
+        frame.add(peaceButton);
         frame.add(peaceProgressBar);
         frame.setVisible(true);
     }
@@ -354,6 +357,19 @@ public class ThemePark {
 
     public void attractionThreeA(ActionEvent event) {
         frame = new JFrame("Attraction Three");
+
+    }
+
+    public void saveThePark(ActionEvent event) {
+        frame = new JFrame("Save the Park!");
+        JLabel text = new JLabel("The big bad comes in.  It's up to you to save the park");
+        JLabel choiceLabel = new JLabel("What do you do?");
+        JButton retreatButton = new JButton("Retreat!");
+        retreatButton.addActionListener(b -> endGame(b));
+        JButton animeButton = new JButton("Start an anime battle and save the park!");
+        animeButton.addActionListener(b -> animeFight(b));
+        JButton peaceButton = new JButton("Make peace with the enemy and convince them to not take over the park!");
+        peaceButton.addActionListener(b -> makePeaceandEndtheGame(b));
 
     }
 
