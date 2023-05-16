@@ -26,6 +26,7 @@ public class AttractionOne {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
         frame.setSize(500, 500);
+        //Gets output from text file
 
         try (Scanner in = new Scanner(new FileReader("randomEncounter.txt"))) {
             String output = in.nextLine();
@@ -34,6 +35,7 @@ public class AttractionOne {
         } catch (Exception E) {
             System.out.println("File not found");
         }
+        //Gives user battle options
         JLabel choiceLabel = new JLabel("What do you do?");
         JButton runButton = new JButton("1- Run away");
         runButton.addActionListener(g -> optionOne(g));
@@ -55,6 +57,7 @@ public class AttractionOne {
     }
 
     public void optionOne(ActionEvent event) {
+        //Ends the battle
         int points = 0;
         boolean randomEncounter = false;
         points = points + 100;
@@ -62,6 +65,7 @@ public class AttractionOne {
     }
 
     public void optionTwo(ActionEvent event) {
+        //Player and computer fight code
         frame = new JFrame("Waiting...");
         frame.setSize(500, 500);
         int m = 300;
@@ -86,6 +90,7 @@ public class AttractionOne {
     }
 
     public void optionThree(ActionEvent event) {
+        //Allows the user to click a progress bar that will make the random encounter friendly
         frame = new JFrame("Waiting...");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());

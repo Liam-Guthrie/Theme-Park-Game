@@ -16,7 +16,7 @@ import java.io.FileReader;
 import java.util.Scanner;
 
 public class ThemePark {
-    // public static void main(String[] args) {
+    // adds in different variables that will be used in this main method
 
     private JFrame frame;
     private JButton button;
@@ -32,12 +32,14 @@ public class ThemePark {
     //
 
     public static void main(String[] args) {
-        // boolean randomEncounter = true;
+        // starts up the main method
 
         new ThemePark();
     }
 
     ThemePark() {
+
+        // creates the title screen
 
         frame = new JFrame("Theme Park Game");
         frame.setSize(500, 500);
@@ -50,6 +52,8 @@ public class ThemePark {
     }
 
     public void characterMenu(ActionEvent event) {
+        // creates an option to select the only character that is coded so far
+
         frame = new JFrame("You Choose The Area");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
@@ -67,6 +71,7 @@ public class ThemePark {
     }
 
     public void characterInfo(ActionEvent event) {
+        //View stats and info about the character
         frame = new JFrame("Park Employee");
         c = 400;
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -86,69 +91,93 @@ public class ThemePark {
     }
 
     public void startGame(ActionEvent event) {
+        // go to the LocationSelect class
         new LocationSelect();
         
     }
 
     public void attractionOneM(ActionEvent event) {
+        // go to the AttractionOne class
         new AttractionOne();
     }
     public void attractionTwoM(ActionEvent event) {
+        // go to the AttractionTwo class
+
         new AttractionTwo();
     }
 
     public void attractionThreeM(ActionEvent event) {
+        // go to the AttractionThree class
+
         new AttractionThree();
 
     }
 
     public void attractionOneH(ActionEvent event) {
+        // go to the AttractionOne class
+
         new AttractionOne();
 
     }
 
     public void attractionTwoH(ActionEvent event) {
+        // go to the AttractionTwo class
+
         new AttractionTwo();
 
     }
 
     public void attractionThreeH(ActionEvent event) {
+        //go to the AttractionThree class 
+
         new AttractionThree();
 
     }
 
     public void attractionOneE(ActionEvent event) {
-        new AttractionOne();
+        // go to the AttractionOne class
 
+        new AttractionOne();
     }
 
     public void attractionTwoE(ActionEvent event) {
+        // go to the AttractionTwo class
+
         new AttractionTwo();
 
     }
 
     public void attractionThreeE(ActionEvent event) {
+        //go to the AttractionThree class 
+
         new AttractionThree();
 
     }
 
     public void attractionOneA(ActionEvent event) {
+        // go to the AttractionOne class
+
         new AttractionOne();
 
     }
 
     public void attractionTwoA(ActionEvent event) {
+        // go to the AttractionTwo class
+
         new AttractionTwo();
 
     }
 
     public void attractionThreeA(ActionEvent event) {
+        //go to the AttractionThree class 
+        
         new AttractionThree();
-
     }
 
     public void saveThePark(ActionEvent event) {
-        new SaveThePark();
+        //go to the SaveThePark class
 
-    }
+        new SaveThePark();
+        
+}
 }

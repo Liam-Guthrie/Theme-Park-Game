@@ -16,6 +16,7 @@ import java.io.FileReader;
 import java.util.Scanner;
 
 public class SaveThePark{
+    //Adds in different variables
     private int score;
     private Object progressBar;
     public SaveThePark(){
@@ -31,6 +32,8 @@ public class SaveThePark{
     int c = 0;
     
     frame = new JFrame("Save the Park!");
+
+    //Adds in a frame that can allow the user to select their move
 
         frame.setSize(500, 500);
         frame.setLayout(new FlowLayout());
@@ -52,6 +55,7 @@ public class SaveThePark{
     }
 
     public void endGame(ActionEvent event) {
+        //Adds in an end screen for if the player fails
         JFrame frame;
         JLabel label;
         frame = new JFrame("The End");
@@ -62,6 +66,7 @@ public class SaveThePark{
     }
 
     public void animeFight(ActionEvent event) {
+        //Code that allows the computer and player to fight each other
         JFrame frame;
         JLabel label;
         int c = 0;
@@ -83,6 +88,7 @@ public class SaveThePark{
     }
 
     public void makePeaceandEndtheGame(ActionEvent event) {
+        //Adds in a click-able progress bar
         JFrame frame;
         JLabel label;
         int points = 0;
@@ -116,6 +122,7 @@ public class SaveThePark{
      * @param event
      */
     public void completeGame(ActionEvent event) {
+        //Adds in an end screen for if the player wins the game and saves the park
         JFrame frame;
         JLabel label;
         frame = new JFrame("Won");
@@ -127,6 +134,7 @@ public class SaveThePark{
 
     }
     private void makePeace(ActionEvent event) {
+        //Adds in a progress bar
         int score = 0;
         JProgressBar progressBar;
         this.score++;
