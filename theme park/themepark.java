@@ -15,7 +15,6 @@ import javax.swing.JProgressBar;
 import java.io.FileReader;
 import java.util.Scanner;
 
-
 public class ThemePark {
     // public static void main(String[] args) {
 
@@ -24,18 +23,17 @@ public class ThemePark {
     private JLabel label;
     private JProgressBar progressBar;
 
-
     private int buttonPresses = 0;
-    private int score = 0;
+    public int score = 0;
     int lowDamage = 0;
-       int okDamage = 0;
-       int points = 0;
-       int c = 0;
-    
+    int okDamage = 0;
+    int points = 0;
+    int c = 0;
+    //
 
     public static void main(String[] args) {
-       // boolean randomEncounter = true;
-       
+        // boolean randomEncounter = true;
+
         new ThemePark();
     }
 
@@ -70,6 +68,7 @@ public class ThemePark {
 
     public void characterInfo(ActionEvent event) {
         frame = new JFrame("Park Employee");
+        c = 400;
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
         frame.setSize(500, 500);
@@ -85,293 +84,71 @@ public class ThemePark {
         frame.add(playButton);
         frame.setVisible(true);
     }
-        
 
     public void startGame(ActionEvent event) {
-        int c = 200;
-        int lowDamage = 100;
-        int okDamage = 500;
-
-
-        frame = new JFrame("The Game");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new FlowLayout());
-        frame.setSize(500, 500);
-        frame.setVisible(true);
-        JLabel areaLabel = new JLabel("Which area do you want to start in?");
-        JButton areaOneButton = new JButton("Area 1");
-        areaOneButton.addActionListener(a -> this.areaOne(a));
-        JButton areaTwoButton = new JButton("Area 2");
-        areaTwoButton.addActionListener(a -> this.areaTwo(a));
-        JButton areaThreeButton = new JButton("Area 3");
-        areaThreeButton.addActionListener(a -> this.areaThree(a));
-        JButton areaFourButton = new JButton("Area 4");
-        areaFourButton.addActionListener(a -> this.areaFour(a));
-        frame.add(areaLabel);
-        frame.add(areaOneButton);
-        frame.add(areaTwoButton);
-        frame.add(areaThreeButton);
-        frame.add(areaFourButton);
-        frame.setVisible(true);
-    }
-
-    public void areaOne(ActionEvent event) {
-        frame = new JFrame("Area 1");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new FlowLayout());
-        frame.setSize(500, 500);
-        frame.setVisible(true);
-        JLabel attractionLabel = new JLabel("Which attraction do you want to see?");
-        JButton attractionOneButton = new JButton("Attraction 1");
-        attractionOneButton.addActionListener(m -> this.attractionOneM(m));
-        JButton attractionTwoButton = new JButton("Attraction 2");
-        attractionTwoButton.addActionListener(m -> this.attractionTwoM(m));
-        JButton attractionThreeButton = new JButton("Attraction 3");
-        attractionThreeButton.addActionListener(m -> this.attractionThreeM(m));
-        frame.add(attractionLabel);
-        frame.add(attractionOneButton);
-        frame.add(attractionTwoButton);
-        frame.add(attractionThreeButton);
-        frame.setVisible(true);
-    }
-
-    public void areaTwo(ActionEvent event) {
-        frame = new JFrame("Area 2");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new FlowLayout());
-        frame.setSize(500, 500);
-        JLabel attractionLabel = new JLabel("Which attraction do you want to see?");
-        JButton attractionOneButton = new JButton("Attraction 1");
-        attractionOneButton.addActionListener(h -> this.attractionOneH(h));
-        JButton attractionTwoButton = new JButton("Attraction 2");
-        attractionTwoButton.addActionListener(h -> this.attractionTwoH(h));
-        JButton attractionThreeButton = new JButton("Attraction 3");
-        attractionThreeButton.addActionListener(h -> this.attractionThreeH(h));
-        frame.add(attractionLabel);
-        frame.add(attractionOneButton);
-        frame.add(attractionTwoButton);
-        frame.add(attractionThreeButton);
-        frame.setVisible(true);
-    }
-
-    public void areaThree(ActionEvent event) {
-        frame = new JFrame("Area 3");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new FlowLayout());
-        frame.setSize(500, 500);
-        frame.setVisible(true);
-        JLabel attractionLabel = new JLabel("Which attraction do you want to see?");
-        JButton attractionOneButton = new JButton("Attraction 1");
-        attractionOneButton.addActionListener(e -> this.attractionOneE(e));
-        JButton attractionTwoButton = new JButton("Attraction 2");
-        attractionOneButton.addActionListener(e -> this.attractionTwoE(e));
-        JButton attractionThreeButton = new JButton("Attraction 3");
-        attractionThreeButton.addActionListener(e -> this.attractionThreeE(e));
-        frame.add(attractionLabel);
-        frame.add(attractionOneButton);
-        frame.add(attractionTwoButton);
-        frame.add(attractionThreeButton);
-        frame.setVisible(true);
-    }
-
-    public void areaFour(ActionEvent event) {
-        frame = new JFrame("Area 4");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new FlowLayout());
-        frame.setSize(500, 500);
-        frame.setVisible(true);
-        JLabel attractionLabel = new JLabel("Which attraction do you want to see?");
-        JButton attractionOneButton = new JButton("Attraction 1");
-        attractionOneButton.addActionListener(a -> this.attractionOneA(a));
-        JButton attractionTwoButton = new JButton("Attraction 2");
-        attractionTwoButton.addActionListener(a -> this.attractionTwoA(a));
-        JButton attractionThreeButton = new JButton("Attraction 3");
-        attractionThreeButton.addActionListener(a -> this.attractionThreeA(a));
-        frame.add(attractionLabel);
-        frame.add(attractionOneButton);
-        frame.add(attractionTwoButton);
-        frame.add(attractionThreeButton);
-        frame.setVisible(true);
+        new LocationSelect();
+        
     }
 
     public void attractionOneM(ActionEvent event) {
-        boolean randomEncounter = true;
-        //while (randomEncounter == true){
-        frame = new JFrame("Attraction One");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new FlowLayout());
-        frame.setSize(500, 500);
-        
-            try (Scanner in = new Scanner("randomEncounter.txt")) {
-                String output = in.next();
-                label = new JLabel(output);
-                frame.add(label);
-        }
-        JLabel choiceLabel = new JLabel("What do you do?");
-        JButton runButton = new JButton("1- Run away");
-        runButton.addActionListener(g -> optionOne(g));
-        JButton animeButton = new JButton("2- Engage in an anime battle");
-        animeButton.addActionListener(g -> optionTwo(g));
-        JButton peaceButton = new JButton("3- Make peace");
-        peaceButton.addActionListener(g -> optionThree(g));
-        frame.add(choiceLabel);
-        frame.add(runButton);
-        frame.add(animeButton);
-        frame.add(peaceButton);
-        frame.setVisible(true);
-        
-        
-
-    //}
-    //frame.add(button);
-       // frame.add(label);
-       frame.setVisible(true);
-
+        new AttractionOne();
     }
-    public void optionOne(ActionEvent event){
-        boolean randomEncounter = false;
-        points = points + 100;
-
-    }
-
-    public void optionTwo(ActionEvent event){
-        frame = new JFrame("Waiting...");
-        int m = 300;
-        m = (int) (Math.random() * 100 + 150);
-        label = new JLabel("You did" + m);
-        frame.add(label);
-        if (m > 0){
-            attractionOneM(event);
-        }
-        else if (1 > m){
-            boolean randomEncounter = false;
-        }
-
-    }
-
-    public void optionThree(ActionEvent event){
-        frame = new JFrame("Waiting...");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new FlowLayout());
-        frame.setSize(500, 500);
-        frame.setVisible(true);
-        JLabel peaceLabel = new JLabel("Tap the button to try to make peace");
-        JProgressBar peaceProgressBar = new JProgressBar(0, 100);
-        peaceProgressBar.setStringPainted(true);
-        JButton peaceButton = new JButton("Click me");
-        peaceButton.addActionListener(u -> this.makePeace(u));
-        if (score == 100){
-            try (Scanner in = new Scanner("randomEncounter.txt")) {
-                String output = in.next();
-                label = new JLabel("You made peace with" + output);
-                frame.add(label);
-                points = points + 150;
-            }
-            boolean randomEncounter = false;
-        }
-        frame.add(peaceLabel);
-        frame.add(peaceButton);
-        frame.add(peaceProgressBar);
-        frame.setVisible(true);
-    }
-
-    private void makePeace(ActionEvent event) {
-        this.score++;
-        this.progressBar.setValue(this.score);
-
-
-    }
-
     public void attractionTwoM(ActionEvent event) {
-        frame = new JFrame("Attraction Two");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new FlowLayout());
-        frame.setVisible(true);
-        try (Scanner in = new Scanner("randomEncounterElectricBoogaloo.txt")) {
-            String output = in.next();
-            label = new JLabel("You come across" + output);
-            frame.add(label);
-            points = points + 150;
-        }
-        JLabel partyLabel = new JLabel("Tap the button to try to have more people join your party");
-        JProgressBar partyProgressBar = new JProgressBar(0, 150);
-        partyProgressBar.setStringPainted(true);
-        JButton partyButton = new JButton("Click me");
-        partyButton.addActionListener(u -> this.makePeace(u));
-        
-        if (score == 150){
-            label = new JLabel("Your party is now stronger");
-            
-        }
-        frame.add(partyLabel);
-        frame.add(partyProgressBar);
-        frame.add(partyButton);
-        frame.setVisible(true);
-      //  frame.add(label);
+        new AttractionTwo();
     }
 
     public void attractionThreeM(ActionEvent event) {
-        frame = new JFrame("Attraction Three");
+        new AttractionThree();
 
     }
 
     public void attractionOneH(ActionEvent event) {
-        frame = new JFrame("Attraction One");
+        new AttractionOne();
 
     }
 
     public void attractionTwoH(ActionEvent event) {
-        frame = new JFrame("Attraction Two");
+        new AttractionTwo();
 
     }
 
     public void attractionThreeH(ActionEvent event) {
-        frame = new JFrame("Attraction Three");
+        new AttractionThree();
 
     }
 
     public void attractionOneE(ActionEvent event) {
-        frame = new JFrame("Attraction One");
+        new AttractionOne();
 
     }
 
     public void attractionTwoE(ActionEvent event) {
-        frame = new JFrame("Attraction Two");
+        new AttractionTwo();
 
     }
 
     public void attractionThreeE(ActionEvent event) {
-        frame = new JFrame("Attraction Three");
+        new AttractionThree();
 
     }
 
     public void attractionOneA(ActionEvent event) {
-        frame = new JFrame("Attraction One");
+        new AttractionOne();
 
     }
 
     public void attractionTwoA(ActionEvent event) {
-        frame = new JFrame("Attraction Two");
+        new AttractionTwo();
 
     }
 
     public void attractionThreeA(ActionEvent event) {
-        frame = new JFrame("Attraction Three");
+        new AttractionThree();
 
     }
 
     public void saveThePark(ActionEvent event) {
-        frame = new JFrame("Save the Park!");
-        JLabel text = new JLabel("The big bad comes in.  It's up to you to save the park");
-        JLabel choiceLabel = new JLabel("What do you do?");
-        JButton retreatButton = new JButton("Retreat!");
-        retreatButton.addActionListener(b -> endGame(b));
-        JButton animeButton = new JButton("Start an anime battle and save the park!");
-        animeButton.addActionListener(b -> animeFight(b));
-        JButton peaceButton = new JButton("Make peace with the enemy and convince them to not take over the park!");
-        peaceButton.addActionListener(b -> makePeaceandEndtheGame(b));
+        new SaveThePark();
 
     }
-
-
 }
