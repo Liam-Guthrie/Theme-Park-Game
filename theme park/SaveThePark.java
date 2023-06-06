@@ -15,25 +15,26 @@ import javax.swing.JProgressBar;
 import java.io.FileReader;
 import java.util.Scanner;
 
-public class SaveThePark{
-    //Adds in different variables
+public class SaveThePark {
+    // Adds in different variables
     private int score;
     private Object progressBar;
-    public SaveThePark(){
-    JFrame frame;
-    JButton button;
-    JLabel label;
-    JProgressBar progressBar;
-    int buttonPresses = 0;
-    int score = 0;
-    int lowDamage = 0;
-    int okDamage = 0;
-    int points = 0;
-    int c = 0;
-    
-    frame = new JFrame("Save the Park!");
 
-    //Adds in a frame that can allow the user to select their move
+    public SaveThePark() {
+        JFrame frame;
+        JButton button;
+        JLabel label;
+        JProgressBar progressBar;
+        int buttonPresses = 0;
+        int score = 0;
+        int lowDamage = 0;
+        int okDamage = 0;
+        int points = 0;
+        int c = 0;
+
+        frame = new JFrame("Save the Park!");
+
+        // Adds in a frame that can allow the user to select their move
 
         frame.setSize(500, 500);
         frame.setLayout(new FlowLayout());
@@ -55,7 +56,7 @@ public class SaveThePark{
     }
 
     public void endGame(ActionEvent event) {
-        //Adds in an end screen for if the player fails
+        // Adds in an end screen for if the player fails
         JFrame frame;
         JLabel label;
         frame = new JFrame("The End");
@@ -66,7 +67,7 @@ public class SaveThePark{
     }
 
     public void animeFight(ActionEvent event) {
-        //Code that allows the computer and player to fight each other
+        // Code that allows the computer and player to fight each other
         JFrame frame;
         JLabel label;
         int c = 0;
@@ -88,7 +89,7 @@ public class SaveThePark{
     }
 
     public void makePeaceandEndtheGame(ActionEvent event) {
-        //Adds in a click-able progress bar
+        // Adds in a click-able progress bar
         JFrame frame;
         JLabel label;
         int points = 0;
@@ -122,7 +123,7 @@ public class SaveThePark{
      * @param event
      */
     public void completeGame(ActionEvent event) {
-        //Adds in an end screen for if the player wins the game and saves the park
+        // Adds in an end screen for if the player wins the game and saves the park
         JFrame frame;
         JLabel label;
         frame = new JFrame("Won");
@@ -133,8 +134,9 @@ public class SaveThePark{
         frame.setVisible(true);
 
     }
+
     private void makePeace(ActionEvent event) {
-        //Adds in a progress bar
+        // Adds in a progress bar
         int score = 0;
         JProgressBar progressBar;
         this.score++;

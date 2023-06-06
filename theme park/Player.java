@@ -1,5 +1,7 @@
 public class Player {
 
+    // Sets up different variables for the player
+
     int lowDamage = 0;
     int okDamage = 0;
     int points = 0;

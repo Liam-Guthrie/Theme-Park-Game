@@ -71,7 +71,7 @@ public class ThemePark {
     }
 
     public void characterInfo(ActionEvent event) {
-        //View stats and info about the character
+        // View stats and info about the character
         frame = new JFrame("Park Employee");
         c = 400;
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -93,13 +93,14 @@ public class ThemePark {
     public void startGame(ActionEvent event) {
         // go to the LocationSelect class
         new LocationSelect();
-        
+
     }
 
     public void attractionOneM(ActionEvent event) {
         // go to the AttractionOne class
         new AttractionOne();
     }
+
     public void attractionTwoM(ActionEvent event) {
         // go to the AttractionTwo class
 
@@ -128,7 +129,7 @@ public class ThemePark {
     }
 
     public void attractionThreeH(ActionEvent event) {
-        //go to the AttractionThree class 
+        // go to the AttractionThree class
 
         new AttractionThree();
 
@@ -148,7 +149,7 @@ public class ThemePark {
     }
 
     public void attractionThreeE(ActionEvent event) {
-        //go to the AttractionThree class 
+        // go to the AttractionThree class
 
         new AttractionThree();
 
@@ -169,15 +170,15 @@ public class ThemePark {
     }
 
     public void attractionThreeA(ActionEvent event) {
-        //go to the AttractionThree class 
-        
+        // go to the AttractionThree class
+
         new AttractionThree();
     }
 
     public void saveThePark(ActionEvent event) {
-        //go to the SaveThePark class
+        // go to the SaveThePark class
 
         new SaveThePark();
-        
-}
+
+    }
 }

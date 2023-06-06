@@ -8,7 +8,6 @@ import java.util.Scanner;
 import javax.swing.JProgressBar;
 import java.awt.event.ActionEvent;
 
-
 public class AttractionOne {
 
     private JFrame frame;
@@ -16,17 +15,16 @@ public class AttractionOne {
     private JLabel label;
     private JProgressBar progressBar;
     public int score = 0;
-    
 
-   public AttractionOne() {
+    public AttractionOne() {
         boolean randomEncounter = true;
         // while (randomEncounter == true){
-            JFrame frame;
+        JFrame frame;
         frame = new JFrame("Attraction One");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
         frame.setSize(500, 500);
-        //Gets output from text file
+        // Gets output from text file
 
         try (Scanner in = new Scanner(new FileReader("randomEncounter.txt"))) {
             String output = in.nextLine();
@@ -35,7 +33,7 @@ public class AttractionOne {
         } catch (Exception E) {
             System.out.println("File not found");
         }
-        //Gives user battle options
+        // Gives user battle options
         JLabel choiceLabel = new JLabel("What do you do?");
         JButton runButton = new JButton("1- Run away");
         runButton.addActionListener(g -> optionOne(g));
@@ -57,7 +55,7 @@ public class AttractionOne {
     }
 
     public void optionOne(ActionEvent event) {
-        //Ends the battle
+        // Ends the battle
         int points = 0;
         boolean randomEncounter = false;
         points = points + 100;
@@ -65,7 +63,7 @@ public class AttractionOne {
     }
 
     public void optionTwo(ActionEvent event) {
-        //Player and computer fight code
+        // Player and computer fight code
         frame = new JFrame("Waiting...");
         frame.setSize(500, 500);
         int m = 300;
@@ -84,13 +82,12 @@ public class AttractionOne {
         } else if (m > 0) {
             new SaveThePark();
         }
-        
-        
 
     }
 
     public void optionThree(ActionEvent event) {
-        //Allows the user to click a progress bar that will make the random encounter friendly
+        // Allows the user to click a progress bar that will make the random encounter
+        // friendly
         frame = new JFrame("Waiting...");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
@@ -122,6 +119,7 @@ public class AttractionOne {
         this.progressBar.setValue(this.score);
 
     }
+
     public void endGame(ActionEvent event) {
         JFrame frame;
         JLabel label;
@@ -131,10 +129,5 @@ public class AttractionOne {
         frame.setVisible(true);
         frame.setSize(500, 500);
     }
-
-
-
-
-
 
 }

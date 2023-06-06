@@ -8,9 +8,9 @@ import java.util.Scanner;
 import javax.swing.JProgressBar;
 import java.awt.event.ActionEvent;
 
-public class AttractionThree{
-    public AttractionThree(){
-        //Adds in a frame where you ride a ride
+public class AttractionThree {
+    public AttractionThree() {
+        // Adds in a frame where you ride a ride
         JFrame frame;
         JLabel label;
         frame = new JFrame("Attraction Three");
